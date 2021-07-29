@@ -19,6 +19,7 @@ Plug 'tpope/vim-surround'                           " Sourround elements
 Plug 'yggdroot/indentline'                          " Show line indentation
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Cocinstall plugings
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Golang
+Plug 'drewtempelmeyer/palenight.vim'                " Neovim Theme
 call plug#end()
 
 let g:coc_global_extensions = [
@@ -62,6 +63,7 @@ set ignorecase                              " Ignore case by default
 set smartcase                               " Make search case sensitive only if it contains uppercase letters
 set wrapscan                                " Search again from top when reached the bottom
 set nohlsearch                              " Don't highlight after search
+set mouse=a                                 " Allow mouse interaction
 set completeopt=menuone,noinsert,noselect
 set clipboard=unnamedplus                   " Always copy to clipboard
 set conceallevel=1
@@ -95,3 +97,9 @@ map <C-A-PageUp> <Plug>vem_move_buffer_left-
 map <C-A-PageDown> <Plug>vem_move_buffer_right-
 map <C-PageUp> :bp<CR>
 map <C-PageDown> :bn<CR>
+
+" Set Theme
+set background=dark
+colorscheme palenight
+let g:airline_theme = "palenight"
+let g:palenight_terminal_italics=1
