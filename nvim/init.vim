@@ -1,26 +1,34 @@
 call plug#begin('~/.config/nvim/plugged')
-Plug 'neovim/nvim-lspconfig'                      " LSP config
-Plug 'nvim-lua/completion-nvim'                   " Autocompletion
-Plug 'preservim/nerdtree'                         " Nerdtree
-Plug 'kyazdani42/nvim-web-devicons'               " Nerdtree icons
-Plug 'psliwka/vim-smoothie'                       " Scrolling
-Plug 'b3nj5m1n/kommentary'                        " Comment
-Plug 'pseewald/vim-anyfold'                       " Folding
-Plug 'vim-airline/vim-airline'                    " Status bar
-Plug 'nvim-lua/popup.nvim'                        " For telescope
-Plug 'nvim-lua/plenary.nvim'                      " For telescope
-Plug 'nvim-telescope/telescope.nvim'              " For telescope
-Plug 'nvim-telescope/telescope-fzy-native.nvim'   " For telescope
-Plug 'pacha/vem-tabline'                          " For tabs
-Plug 'ryanoasis/vim-devicons'                     " Icons
-Plug 'miyakogi/conoline.vim'                      " Cursor highlight
-Plug 'Xuyuanp/scrollbar.nvim'                     " Scrollbar
-Plug 'tpope/vim-surround'                         " Sourround elements
-Plug 'yggdroot/indentline'                        " Show line indentation
-Plug 'neoclide/coc.nvim', {'branch': 'release'}   " Cocinstall plugings
+Plug 'neovim/nvim-lspconfig'                        " LSP config
+Plug 'nvim-lua/completion-nvim'                     " Autocompletion
+Plug 'preservim/nerdtree'                           " Nerdtree
+Plug 'kyazdani42/nvim-web-devicons'                 " Nerdtree icons
+Plug 'psliwka/vim-smoothie'                         " Scrolling
+Plug 'b3nj5m1n/kommentary'                          " Comment
+Plug 'pseewald/vim-anyfold'                         " Folding
+Plug 'vim-airline/vim-airline'                      " Status bar
+Plug 'nvim-lua/popup.nvim'                          " For telescope
+Plug 'nvim-lua/plenary.nvim'                        " For telescope
+Plug 'nvim-telescope/telescope.nvim'                " For telescope
+Plug 'nvim-telescope/telescope-fzy-native.nvim'     " For telescope
+Plug 'pacha/vem-tabline'                            " For tabs
+Plug 'ryanoasis/vim-devicons'                       " Icons
+Plug 'miyakogi/conoline.vim'                        " Cursor highlight
+Plug 'Xuyuanp/scrollbar.nvim'                       " Scrollbar
+Plug 'tpope/vim-surround'                           " Sourround elements
+Plug 'yggdroot/indentline'                          " Show line indentation
+Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Cocinstall plugings
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Golang
 call plug#end()
 
-let g:coc_global_extensions = ['coc-json','coc-html', 'coc-go', 'coc-tailwindcss']
+let g:coc_global_extensions = [
+      \'coc-json',
+      \'coc-html', 
+      \'coc-go', 
+      \'coc-tailwindcss',
+      \'coc-sql',
+      \'coc-python'
+      \]
 
 " Autostart
 let g:conoline_auto_enable = 1
@@ -57,6 +65,7 @@ set nohlsearch                              " Don't highlight after search
 set completeopt=menuone,noinsert,noselect
 set clipboard=unnamedplus                   " Always copy to clipboard
 set conceallevel=1
+set termguicolors                           " Better colors
 
 " Folding
 filetype plugin indent on                    " required
@@ -82,7 +91,7 @@ nnoremap <silent>fb <cmd>Telescope buffers<cr>
 nnoremap <silent>fh <cmd>Telescope help_tags<cr>
 
 " Mapping tabbar
-nmap <silent>yh <Plug>vem_move_buffer_left-
-nmap <silent>yl <Plug>vem_move_buffer_right-
-nmap <silent>yj <Plug>vem_prev_buffer-
-nmap <silent>yk <Plug>vem_next_buffer-
+map <C-A-PageUp> <Plug>vem_move_buffer_left-
+map <C-A-PageDown> <Plug>vem_move_buffer_right-
+map <C-PageUp> :bp<CR>
+map <C-PageDown> :bn<CR>
