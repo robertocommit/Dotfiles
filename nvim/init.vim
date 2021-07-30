@@ -20,6 +20,7 @@ Plug 'yggdroot/indentline'                          " Show line indentation
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Cocinstall plugings
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Golang
 Plug 'drewtempelmeyer/palenight.vim'                " Neovim Theme
+Plug 'mhinz/vim-startify'                           " Start Screen
 call plug#end()
 
 let g:coc_global_extensions = [
@@ -75,7 +76,6 @@ syntax on                                    " required
 autocmd Filetype * AnyFoldActivate           " activate for all filetypes
 set foldlevel=99                             " close all folds
 
-
 " Autocompletion
 lua require'lspconfig'.pyright.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.vuels.setup{ on_attach=require'completion'.on_attach }
@@ -85,6 +85,9 @@ nnoremap <up> <C-w>k
 nnoremap <down> <C-w>j
 nnoremap <left> <C-w>h
 nnoremap <right> <C-w>l
+nnoremap <c-s> :w<CR>
+inoremap <c-s> <Esc>:w<CR>
+vnoremap <c-s> <Esc>:w<CR>
 
 " Mappings telescope
 nnoremap <silent>ff <cmd>Telescope find_files<cr>
