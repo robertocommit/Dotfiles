@@ -105,6 +105,10 @@ map <C-PageDown> :bn<CR>
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
+" Undo break points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+
 " Set Theme
 set background=dark
 colorscheme palenight
