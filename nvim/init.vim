@@ -101,6 +101,10 @@ map <C-A-PageDown> <Plug>vem_move_buffer_right-
 map <C-PageUp> :bp<CR>
 map <C-PageDown> :bn<CR>
 
+" Keep cursor centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 " Set Theme
 set background=dark
 colorscheme palenight
