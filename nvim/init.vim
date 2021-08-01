@@ -44,11 +44,11 @@ augroup ScrollbarInit
   autocmd WinLeave,BufLeave,BufWinLeave,FocusLost            * silent! lua require('scrollbar').clear()
 augroup end
 
+" Set
+scriptencoding utf-8                        " Set utf-8 as default script encoding
 set hidden
 set encoding=utf-8                          " The encoding displayed.
 set fileencoding=utf-8                      " The encoding written to file.
-scriptencoding utf-8                        " Set utf-8 as default script encoding
-
 set number                                  " Line numbers on
 set relativenumber                          " Dinamic line numbers
 set showmode                                " Always show mode
