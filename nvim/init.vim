@@ -29,7 +29,6 @@ let g:coc_global_extensions = [
       \'coc-go', 
       \'coc-tailwindcss',
       \'coc-sql',
-      \'coc-python'
       \]
 
 " Autostart
@@ -77,7 +76,6 @@ autocmd Filetype * AnyFoldActivate           " activate for all filetypes
 set foldlevel=99                             " close all folds
 
 " Autocompletion
-lua require'lspconfig'.pyright.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.vuels.setup{ on_attach=require'completion'.on_attach }
 
 " Mappings
