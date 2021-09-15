@@ -1,2 +1,4 @@
 /nvim/autoload/*
 /nvim/plugged/*
+*.save
+*.save.1
