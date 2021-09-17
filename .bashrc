@@ -1,34 +1,52 @@
-#
-# ~/.bashrc
-#
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-# . ~/.bashrc   
+# Load starship prompt if starship is installed
+if  [ -x /usr/bin/starship ]; then
+    __main() {
+        local major="${BASH_VERSINFO[0]}"
+        local minor="${BASH_VERSINFO[1]}"
 
-# THINGS CREATED BY ME FROM https://gist.github.com/ckabalan/7d374ceea8c2d9dd237d763d385cf2aa
-# Save 5,000 lines of history in memory
-HISTSIZE=10000
-# Save 2,000,000 lines of history to disk (will have to grep ~/.bash_history for full listing)
-HISTFILESIZE=2000000
-# Append to history instead of overwrite
-shopt -s histappend
-# Ignore redundant or space commands
-HISTCONTROL=ignoreboth
-# Ignore more
-HISTIGNORE='ls:ll:ls -alh:pwd:clear:history'
-# Set time format
-HISTTIMEFORMAT='%F %T '
-# Multiple commands on one line show up as a single line
-shopt -s cmdhist
-# Append new history lines, clear the history list, re-read the history list, print prompt.
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+        if ((major > 4)) || { ((major == 4)) && ((minor >= 1)); }; then
+            source <("/usr/bin/starship" init bash --print-full-init)
+        else
+            source /dev/stdin <<<"$("/usr/bin/starship" init bash --print-full-init)"
+        fi
+    }
+    __main
+    unset -f __main
+fi
 
+# Aliases
+alias ls='exa -1 -l --icons'
+alias dir='dir --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias fixpacman="sudo rm /var/lib/pacman/db.lck"
+alias grep='grep --color=auto'
+alias grubup="sudo update-grub"
+alias hw='hwinfo --short'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+alias psmem='ps auxf | sort -nr -k 4'
+alias rmpkg="sudo pacman -Rdd"
+alias tarnow='tar -acf '
+alias untar='tar -zxvf '
+alias upd='/usr/bin/update'
+alias vdir='vdir --color=auto'
+alias wget='wget -c '
 
-alias s="cd ~/Script"
-alias c="clear"
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias np='nano -w PKGBUILD'
-alias more=less
-alias ls="exa -la"
-. "$HOME/.cargo/env"
+# Help people new to Arch
+alias apt-get='man pacman'
+alias apt='man pacman'
+alias helpme='cht.sh --shell'
+alias please='sudo'
+alias tb='nc termbin.com 9999'
+
+# Cleanup orphaned packages
+alias cleanup='sudo pacman -Rns `pacman -Qtdq`'
+
+# Get the error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+
+# Recent installed packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
