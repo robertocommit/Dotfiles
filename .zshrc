@@ -104,5 +104,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias c="clear"
+alias ls="exa -1 -l --icons"
 
 eval "$(starship init zsh)"
