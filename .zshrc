@@ -108,3 +108,9 @@ alias c="clear"
 alias ls="exa -1 -l --icons"
 
 eval "$(starship init zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/dolphin/Desktop/google-cloud-sdk/path.zsh.inc' ]; then . '/home/dolphin/Desktop/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/dolphin/Desktop/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/dolphin/Desktop/google-cloud-sdk/completion.zsh.inc'; fi
