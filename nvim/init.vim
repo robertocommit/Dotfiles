@@ -21,6 +21,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Cocinstall plugings
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Golang
 Plug 'drewtempelmeyer/palenight.vim'                " Neovim Theme
 Plug 'mhinz/vim-startify'                           " Start Screen
+Plug 'chrisbra/Colorizer'                           " CSS Colors
 call plug#end()
 
 let g:coc_global_extensions = [
@@ -120,3 +121,6 @@ set background=dark
 colorscheme palenight
 let g:airline_theme = "palenight"
 let g:palenight_terminal_italics=1
+
+" Auto load CSS colors
+:let g:colorizer_auto_color = 1
