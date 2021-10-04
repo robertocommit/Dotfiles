@@ -87,6 +87,9 @@ nnoremap <right> <C-w>l
 nnoremap <c-s> :w<CR>
 inoremap <c-s> <Esc>:w<CR>
 vnoremap <c-s> <Esc>:w<CR>
+inoremap <C-y> <C-u>
+inoremap <C-x> <C-w>
+set backspace=indent,eol,start
 
 " Mappings telescope
 nnoremap <silent>ff <cmd>Telescope find_files<cr>
