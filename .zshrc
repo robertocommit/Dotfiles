@@ -106,6 +106,9 @@ source $ZSH/oh-my-zsh.sh
 
 alias c="clear"
 alias ls="exa -1 -l --icons"
+alias gs="git status"
+alias ga.="git add ."
+alias gd="git diff"
 
 eval "$(starship init zsh)"
 
