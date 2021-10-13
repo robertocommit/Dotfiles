@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'neovim/nvim-lspconfig'                        " LSP config
+Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Cocinstall plugings
 Plug 'nvim-lua/completion-nvim'                     " Autocompletion
 Plug 'preservim/nerdtree'                           " Nerdtree
 Plug 'kyazdani42/nvim-web-devicons'                 " Nerdtree icons
@@ -17,20 +18,27 @@ Plug 'miyakogi/conoline.vim'                        " Cursor highlight
 Plug 'Xuyuanp/scrollbar.nvim'                       " Scrollbar
 Plug 'tpope/vim-surround'                           " Sourround elements
 Plug 'yggdroot/indentline'                          " Show line indentation
-Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Cocinstall plugings
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Golang
 Plug 'drewtempelmeyer/palenight.vim'                " Neovim Theme
 Plug 'mhinz/vim-startify'                           " Start Screen
-Plug 'ap/vim-css-color'
+Plug 'ap/vim-css-color'                             " Display CSS colors
+Plug 'pangloss/vim-javascript'                      " Javascript support
+Plug 'leafgarland/typescript-vim'                   " Typescript support
 call plug#end()
 
 let g:coc_global_extensions = [
       \'coc-json',
-      \'coc-html', 
+      \'coc-tsserver',
       \'coc-go', 
       \'coc-tailwindcss',
       \'coc-sql',
+      \'coc-eslint',
+      \'coc-vetur',
       \]
+
+lua << EOF
+require'lspconfig'.html.setup{}
+EOF
 
 " Autostart
 let g:conoline_auto_enable = 1
