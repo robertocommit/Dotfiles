@@ -24,7 +24,10 @@ Plug 'mhinz/vim-startify'                           " Start Screen
 Plug 'ap/vim-css-color'                             " Display CSS colors
 Plug 'pangloss/vim-javascript'                      " Javascript support
 Plug 'leafgarland/typescript-vim'                   " Typescript support
+Plug 'lewis6991/gitsigns.nvim'                      " Git show chaanges
 call plug#end()
+
+lua require('gitsigns').setup()
 
 let g:coc_global_extensions = [
       \'coc-json',
@@ -132,3 +135,6 @@ set background=dark
 colorscheme palenight
 let g:airline_theme = "palenight"
 let g:palenight_terminal_italics=1
+
+" Exist insert mode after inactivity
+au CursorHoldI * stopinsert
