@@ -111,4 +111,3 @@ alias ga.="git add ."
 alias gd="git diff"
 
 eval "$(starship init zsh)"
-source /home/dolphin/Code/Scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

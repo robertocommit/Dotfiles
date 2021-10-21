@@ -1,4 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " FZF
+Plug 'junegunn/fzf.vim'                             " FZF
 Plug 'neovim/nvim-lspconfig'                        " LSP config
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Cocinstall plugings
 Plug 'nvim-lua/completion-nvim'                     " Autocompletion
@@ -8,14 +10,9 @@ Plug 'psliwka/vim-smoothie'                         " Scrolling
 Plug 'b3nj5m1n/kommentary'                          " Comment
 Plug 'pseewald/vim-anyfold'                         " Folding
 Plug 'vim-airline/vim-airline'                      " Status bar
-Plug 'nvim-lua/popup.nvim'                          " For telescope
-Plug 'nvim-lua/plenary.nvim'                        " For telescope
-Plug 'nvim-telescope/telescope.nvim'                " For telescope
-Plug 'nvim-telescope/telescope-fzy-native.nvim'     " For telescope
 Plug 'pacha/vem-tabline'                            " For tabs
 Plug 'ryanoasis/vim-devicons'                       " Icons
 Plug 'miyakogi/conoline.vim'                        " Cursor highlight
-Plug 'Xuyuanp/scrollbar.nvim'                       " Scrollbar
 Plug 'tpope/vim-surround'                           " Sourround elements
 Plug 'yggdroot/indentline'                          " Show line indentation
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Golang
@@ -25,35 +22,24 @@ Plug 'ap/vim-css-color'                             " Display CSS colors
 Plug 'pangloss/vim-javascript'                      " Javascript support
 Plug 'leafgarland/typescript-vim'                   " Typescript support
 Plug 'lewis6991/gitsigns.nvim'                      " Git show chaanges
+Plug 'voldikss/vim-floaterm'                        " Floating terminal
 call plug#end()
 
-lua require('gitsigns').setup()
-
 let g:coc_global_extensions = [
-      \'coc-json',
-      \'coc-tsserver',
-      \'coc-go', 
-      \'coc-tailwindcss',
-      \'coc-sql',
-      \'coc-eslint',
-      \'coc-vetur',
-      \]
+  \'coc-json',
+  \'coc-tsserver',
+  \'coc-go',
+  \'coc-tailwindcss',
+  \'coc-sql',
+  \'coc-eslint',
+  \'coc-vetur']
 
-lua << EOF
-require'lspconfig'.html.setup{}
-EOF
+lua require'lspconfig'.html.setup{}
+lua require'lspconfig'.vuels.setup{ on_attach=require'completion'.on_attach }
 
 " Autostart
 let g:conoline_auto_enable = 1
 let g:indentLine_conceallevel=1
-
-" Scrollbar settings
-augroup ScrollbarInit
-  autocmd!
-  autocmd CursorMoved,VimResized,QuitPre * silent! lua require('scrollbar').show()
-  autocmd WinEnter,FocusGained           * silent! lua require('scrollbar').show()
-  autocmd WinLeave,BufLeave,BufWinLeave,FocusLost            * silent! lua require('scrollbar').clear()
-augroup end
 
 " Set
 scriptencoding utf-8                        " Set utf-8 as default script encoding
@@ -77,7 +63,7 @@ set wrapscan                                " Search again from top when reached
 set nohlsearch                              " Don't highlight after search
 set mouse=a                                 " Allow mouse interaction
 set completeopt=menuone,noinsert,noselect
-set clipboard=unnamedplus                   " Always copy to clipboard
+set clipboard=unnamed
 set conceallevel=1
 set termguicolors                           " Better colors
 
@@ -88,7 +74,6 @@ autocmd Filetype * AnyFoldActivate           " activate for all filetypes
 set foldlevel=99                             " close all folds
 
 " Autocompletion
-lua require'lspconfig'.vuels.setup{ on_attach=require'completion'.on_attach }
 
 " Mappings
 nnoremap <up> <C-w>k
@@ -102,11 +87,9 @@ inoremap <C-y> <C-u>
 inoremap <C-x> <C-w>
 set backspace=indent,eol,start
 
-" Mappings telescope
-nnoremap <silent>ff <cmd>Telescope find_files<cr>
-nnoremap <silent>fg <cmd>Telescope live_grep<cr>
-nnoremap <silent>fb <cmd>Telescope buffers<cr>
-nnoremap <silent>fh <cmd>Telescope help_tags<cr>
+" Mappings FZF
+nnoremap <silent>ff :Files<CR>
+nnoremap <silent>fg :Rg<CR>
 
 " Mapping tabbar
 map <C-A-PageUp> <Plug>vem_move_buffer_left-
@@ -118,18 +101,6 @@ map <C-PageDown> :bn<CR>
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-" Undo break points
-inoremap , ,<c-g>u
-inoremap . .<c-g>u
-
-" Moving text or blocks
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
-
 " Set Theme
 set background=dark
 colorscheme palenight
@@ -138,3 +109,8 @@ let g:palenight_terminal_italics=1
 
 " Exist insert mode after inactivity
 au CursorHoldI * stopinsert
+
+" Floating terminal
+let g:floaterm_keymap_new = '<F1>'
+let g:floaterm_keymap_show = '<F2>'
+let g:floaterm_keymap_hide = '<F3>'
