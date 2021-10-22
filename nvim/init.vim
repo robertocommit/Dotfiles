@@ -1,32 +1,33 @@
 call plug#begin('~/.config/nvim/plugged')
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " FZF
-Plug 'junegunn/fzf.vim'                             " FZF
-Plug 'neovim/nvim-lspconfig'                        " LSP config
-Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Cocinstall plugings
-Plug 'nvim-lua/completion-nvim'                     " Autocompletion
-Plug 'preservim/nerdtree'                           " Nerdtree
-Plug 'kyazdani42/nvim-web-devicons'                 " Nerdtree icons
-Plug 'psliwka/vim-smoothie'                         " Scrolling
-Plug 'b3nj5m1n/kommentary'                          " Comment
-Plug 'pseewald/vim-anyfold'                         " Folding
-Plug 'vim-airline/vim-airline'                      " Status bar
-Plug 'pacha/vem-tabline'                            " For tabs
-Plug 'ryanoasis/vim-devicons'                       " Icons
-Plug 'miyakogi/conoline.vim'                        " Cursor highlight
-Plug 'tpope/vim-surround'                           " Sourround elements
-Plug 'yggdroot/indentline'                          " Show line indentation
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Golang
-Plug 'drewtempelmeyer/palenight.vim'                " Neovim Theme
-Plug 'mhinz/vim-startify'                           " Start Screen
-Plug 'ap/vim-css-color'                             " Display CSS colors
-Plug 'pangloss/vim-javascript'                      " Javascript support
-Plug 'leafgarland/typescript-vim'                   " Typescript support
-Plug 'lewis6991/gitsigns.nvim'                      " Git show chaanges
-Plug 'voldikss/vim-floaterm'                        " Floating terminal
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " FZF
+  Plug 'junegunn/fzf.vim'                             " FZF
+  Plug 'neovim/nvim-lspconfig'                        " LSP config
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Cocinstall plugings
+  Plug 'nvim-lua/completion-nvim'                     " Autocompletion
+  Plug 'preservim/nerdtree'                           " Nerdtree
+  Plug 'kyazdani42/nvim-web-devicons'                 " Nerdtree icons
+  Plug 'psliwka/vim-smoothie'                         " Scrolling
+  Plug 'b3nj5m1n/kommentary'                          " Comment
+  Plug 'pseewald/vim-anyfold'                         " Folding
+  Plug 'vim-airline/vim-airline'                      " Status bar
+  Plug 'pacha/vem-tabline'                            " For tabs
+  Plug 'ryanoasis/vim-devicons'                       " Icons
+  Plug 'miyakogi/conoline.vim'                        " Cursor highlight
+  Plug 'tpope/vim-surround'                           " Sourround elements
+  Plug 'yggdroot/indentline'                          " Show line indentation
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Golang
+  Plug 'drewtempelmeyer/palenight.vim'                " Neovim Theme
+  Plug 'mhinz/vim-startify'                           " Start Screen
+  Plug 'ap/vim-css-color'                             " Display CSS colors
+  Plug 'pangloss/vim-javascript'                      " Javascript support
+  Plug 'leafgarland/typescript-vim'                   " Typescript support
+  Plug 'lewis6991/gitsigns.nvim'                      " Git show changes
+  Plug 'voldikss/vim-floaterm'                        " Floating terminal
 call plug#end()
 
 let g:coc_global_extensions = [
   \'coc-json',
+  \'coc-html',
   \'coc-tsserver',
   \'coc-go',
   \'coc-tailwindcss',
@@ -34,12 +35,9 @@ let g:coc_global_extensions = [
   \'coc-eslint',
   \'coc-vetur']
 
-lua require'lspconfig'.html.setup{}
-lua require'lspconfig'.vuels.setup{ on_attach=require'completion'.on_attach }
-
 " Autostart
-let g:conoline_auto_enable = 1
-let g:indentLine_conceallevel=1
+let g:conoline_auto_enable = 1              " Enable show current line on start
+let g:indentLine_conceallevel=1             " Enable show indent line on start
 
 " Set
 scriptencoding utf-8                        " Set utf-8 as default script encoding
@@ -63,17 +61,15 @@ set wrapscan                                " Search again from top when reached
 set nohlsearch                              " Don't highlight after search
 set mouse=a                                 " Allow mouse interaction
 set completeopt=menuone,noinsert,noselect
-set clipboard=unnamed
+set clipboard+=unnamedplus                  " Copy and paste, requires xclip, gvim
 set conceallevel=1
 set termguicolors                           " Better colors
 
 " Folding
-filetype plugin indent on                    " required
-syntax on                                    " required
-autocmd Filetype * AnyFoldActivate           " activate for all filetypes
-set foldlevel=99                             " close all folds
-
-" Autocompletion
+filetype plugin indent on
+syntax on
+autocmd Filetype * AnyFoldActivate
+set foldlevel=99
 
 " Mappings
 nnoremap <up> <C-w>k
@@ -97,7 +93,7 @@ map <C-A-PageDown> <Plug>vem_move_buffer_right-
 map <C-PageUp> :bp<CR>
 map <C-PageDown> :bn<CR>
 
-" Keep cursor centered
+" Keep cursor centered when searching
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
@@ -111,6 +107,7 @@ let g:palenight_terminal_italics=1
 au CursorHoldI * stopinsert
 
 " Floating terminal
-let g:floaterm_keymap_new = '<F1>'
-let g:floaterm_keymap_show = '<F2>'
-let g:floaterm_keymap_hide = '<F3>'
+let g:floaterm_keymap_new = 'to'
+let g:floaterm_keymap_kill = 'tc'
+let g:floaterm_keymap_show = 'ts'
+let g:floaterm_keymap_hide = 'th'
