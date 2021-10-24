@@ -16,14 +16,16 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-surround'                           " Sourround elements
   Plug 'yggdroot/indentline'                          " Show line indentation
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Golang
-  Plug 'drewtempelmeyer/palenight.vim'                " Neovim Theme
   Plug 'mhinz/vim-startify'                           " Start Screen
   Plug 'ap/vim-css-color'                             " Display CSS colors
   Plug 'pangloss/vim-javascript'                      " Javascript support
   Plug 'leafgarland/typescript-vim'                   " Typescript support
   Plug 'lewis6991/gitsigns.nvim'                      " Git show changes
   Plug 'voldikss/vim-floaterm'                        " Floating terminal
+  Plug 'bignimbus/pop-punk.vim'                       " Color scheme
 call plug#end()
+
+colorscheme pop-punk
 
 let g:coc_global_extensions = [
   \'coc-json',
@@ -33,6 +35,7 @@ let g:coc_global_extensions = [
   \'coc-tailwindcss',
   \'coc-sql',
   \'coc-eslint',
+  \'coc-svelte',
   \'coc-vetur']
 
 " Autostart
@@ -96,12 +99,6 @@ map <C-PageDown> :bn<CR>
 " Keep cursor centered when searching
 nnoremap n nzzzv
 nnoremap N Nzzzv
-
-" Set Theme
-set background=dark
-colorscheme palenight
-let g:airline_theme = "palenight"
-let g:palenight_terminal_italics=1
 
 " Exist insert mode after inactivity
 au CursorHoldI * stopinsert
