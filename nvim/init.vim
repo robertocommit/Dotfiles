@@ -22,6 +22,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'leafgarland/typescript-vim'                   " Typescript support
   Plug 'lewis6991/gitsigns.nvim'                      " Git show changes
   Plug 'voldikss/vim-floaterm'                        " Floating terminal
+  Plug 'cespare/vim-toml'                             " Syntaxt Toml
   Plug 'bignimbus/pop-punk.vim'                       " Color scheme
 call plug#end()
 
@@ -66,7 +67,6 @@ set mouse=a                                 " Allow mouse interaction
 set completeopt=menuone,noinsert,noselect
 set clipboard+=unnamedplus                  " Copy and paste, requires xclip, gvim
 set conceallevel=1
-set termguicolors                           " Better colors
 
 " Folding
 filetype plugin indent on
@@ -84,6 +84,7 @@ inoremap <c-s> <Esc>:w<CR>
 vnoremap <c-s> <Esc>:w<CR>
 inoremap <C-y> <C-u>
 inoremap <C-x> <C-w>
+inoremap <C-c> <C-o>de
 set backspace=indent,eol,start
 
 " Mappings FZF
@@ -108,3 +109,4 @@ let g:floaterm_keymap_new = 'to'
 let g:floaterm_keymap_kill = 'tc'
 let g:floaterm_keymap_show = 'ts'
 let g:floaterm_keymap_hide = 'th'
+
