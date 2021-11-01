@@ -24,6 +24,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'voldikss/vim-floaterm'                        " Floating terminal
   Plug 'cespare/vim-toml'                             " Syntaxt Toml
   Plug 'bignimbus/pop-punk.vim'                       " Color scheme
+  Plug 'justinmk/vim-sneak'                           " Advanced motion
 call plug#end()
 
 colorscheme pop-punk
