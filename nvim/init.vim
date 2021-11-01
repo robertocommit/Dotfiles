@@ -25,6 +25,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'cespare/vim-toml'                             " Syntaxt Toml
   Plug 'bignimbus/pop-punk.vim'                       " Color scheme
   Plug 'justinmk/vim-sneak'                           " Advanced motion
+  Plug 'haya14busa/incsearch.vim'                     " Highlight search
 call plug#end()
 
 colorscheme pop-punk
@@ -97,6 +98,10 @@ map <C-A-PageUp> <Plug>vem_move_buffer_left-
 map <C-A-PageDown> <Plug>vem_move_buffer_right-
 map <C-PageUp> :bp<CR>
 map <C-PageDown> :bn<CR>
+
+" Mapping search highlight
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
 
 " Keep cursor centered when searching
 nnoremap n nzzzv
