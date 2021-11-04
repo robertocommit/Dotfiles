@@ -41,6 +41,10 @@ let g:coc_global_extensions = [
   \'coc-svelte',
   \'coc-vetur']
 
+" Golang strict format
+let g:go_fmt_command="gopls"
+let g:go_gopls_gofumpt=1
+
 " Autostart
 let g:conoline_auto_enable = 1              " Enable show current line on start
 let g:indentLine_conceallevel=1             " Enable show indent line on start
