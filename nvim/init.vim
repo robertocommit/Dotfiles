@@ -26,6 +26,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'bignimbus/pop-punk.vim'                       " Color scheme
   Plug 'justinmk/vim-sneak'                           " Advanced motion
   Plug 'haya14busa/incsearch.vim'                     " Highlight search
+  Plug 'tomlion/vim-solidity'                         " Solidity
 call plug#end()
 
 colorscheme pop-punk
