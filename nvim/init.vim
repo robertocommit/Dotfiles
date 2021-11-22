@@ -27,12 +27,12 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'justinmk/vim-sneak'                           " Advanced motion
   Plug 'haya14busa/incsearch.vim'                     " Highlight search
   Plug 'tomlion/vim-solidity'                         " Solidity
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } "Markdown
 call plug#end()
 
 colorscheme pop-punk
 
 let g:coc_global_extensions = [
-  \'coc-json',
   \'coc-html',
   \'coc-tsserver',
   \'coc-go',
