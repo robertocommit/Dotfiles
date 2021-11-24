@@ -28,10 +28,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'haya14busa/incsearch.vim'                     " Highlight search
   Plug 'tomlion/vim-solidity'                         " Solidity
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } "Markdown
-  Plug 'reedes/vim-pencil'                          " Writing tools
+  Plug 'reedes/vim-pencil'                            " Writing utilities and tools
 call plug#end()
 
-# Automatically runs Pencil for md and txt files
+" Automagically runs Pencil for md and txt files
 augroup pencil
   autocmd!
   autocmd FileType markdown,mkd call pencil#init()
