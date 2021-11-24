@@ -28,7 +28,15 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'haya14busa/incsearch.vim'                     " Highlight search
   Plug 'tomlion/vim-solidity'                         " Solidity
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } "Markdown
+  Plug 'reedes/vim-pencil'                          " Writing tools
 call plug#end()
+
+# Automatically runs Pencil for md and txt files
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init({'wrap': 'hard'})
+augroup END
 
 colorscheme pop-punk
 
@@ -120,4 +128,3 @@ let g:floaterm_keymap_new = 'to'
 let g:floaterm_keymap_kill = 'tc'
 let g:floaterm_keymap_show = 'ts'
 let g:floaterm_keymap_hide = 'th'
-
