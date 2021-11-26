@@ -124,7 +124,7 @@ nnoremap N Nzzzv
 au CursorHoldI * stopinsert
 
 " Floating terminal
-let g:floaterm_keymap_new = 'to'
-let g:floaterm_keymap_kill = 'tc'
-let g:floaterm_keymap_show = 'ts'
-let g:floaterm_keymap_hide = 'th'
+let g:floaterm_keymap_new = '<C-A-n>'
+let g:floaterm_keymap_kill = '<C-A-k>'
+let g:floaterm_keymap_show = '<C-A-s>'
+let g:floaterm_keymap_hide = '<C-A-h>'
