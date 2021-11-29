@@ -82,12 +82,9 @@ set mouse=a                                 " Allow mouse interaction
 set completeopt=menuone,noinsert,noselect
 set clipboard+=unnamedplus                  " Copy and paste, requires xclip, gvim
 set conceallevel=1
-
-" Folding
-filetype plugin indent on
-syntax on
-autocmd Filetype * AnyFoldActivate
-set foldlevel=99
+set scrolloff=3                             " Leave n rows top/down when scrollinh
+set colorcolumn=80                          " Vertical bar
+highlight ColorColumn ctermbg=238           " Change color verical bar
 
 " Mappings
 nnoremap <up> <C-w>k
@@ -128,3 +125,9 @@ let g:floaterm_keymap_new = '<C-A-n>'
 let g:floaterm_keymap_kill = '<C-A-k>'
 let g:floaterm_keymap_show = '<C-A-s>'
 let g:floaterm_keymap_hide = '<C-A-h>'
+
+" Folding
+filetype plugin indent on
+syntax on
+autocmd Filetype * AnyFoldActivate
+set foldlevel=99
