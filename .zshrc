@@ -6,6 +6,7 @@ export GOROOT="/usr/lib/go"
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
+export PATH="$HOME/.cargo/bin:$PATH"
 
 plugins=(
   zsh-autosuggestions

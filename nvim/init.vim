@@ -42,13 +42,14 @@ colorscheme pop-punk
 
 let g:coc_global_extensions = [
   \'coc-html',
+  \'coc-tailwindcss',
   \'coc-tsserver',
   \'coc-go',
-  \'coc-tailwindcss',
   \'coc-sql',
   \'coc-eslint',
   \'coc-svelte',
   \'coc-vetur']
+  
 
 " Golang strict format
 let g:go_fmt_command="gopls"
