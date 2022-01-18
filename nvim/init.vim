@@ -23,13 +23,15 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'lewis6991/gitsigns.nvim'                      " Git show changes
   Plug 'voldikss/vim-floaterm'                        " Floating terminal
   Plug 'cespare/vim-toml'                             " Syntaxt Toml
-  Plug 'bignimbus/pop-punk.vim'                       " Color scheme
   Plug 'justinmk/vim-sneak'                           " Advanced motion
   Plug 'haya14busa/incsearch.vim'                     " Highlight search
   Plug 'tomlion/vim-solidity'                         " Solidity
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } "Markdown
   Plug 'reedes/vim-pencil'                            " Writing utilities and tools
+  Plug 'projekt0n/github-nvim-theme'                  " Color scheme
 call plug#end()
+
+colorscheme github_*
 
 " Automagically runs Pencil for md and txt files
 augroup pencil
@@ -37,8 +39,6 @@ augroup pencil
   autocmd FileType markdown,mkd call pencil#init()
   autocmd FileType text         call pencil#init({'wrap': 'hard'})
 augroup END
-
-colorscheme pop-punk
 
 let g:coc_global_extensions = [
   \'coc-html',

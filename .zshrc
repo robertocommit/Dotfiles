@@ -16,6 +16,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,underline"
+
 alias c="clear"
 alias ls="exa -1 -l --icons"
 alias gs="git status"
