@@ -20,7 +20,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'ap/vim-css-color'                             " Display CSS colors
   Plug 'pangloss/vim-javascript'                      " Javascript support
   Plug 'leafgarland/typescript-vim'                   " Typescript support
-  Plug 'lewis6991/gitsigns.nvim'                      " Git show changes
   Plug 'voldikss/vim-floaterm'                        " Floating terminal
   Plug 'cespare/vim-toml'                             " Syntaxt Toml
   Plug 'justinmk/vim-sneak'                           " Advanced motion
@@ -29,6 +28,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } "Markdown
   Plug 'reedes/vim-pencil'                            " Writing utilities and tools
   Plug 'projekt0n/github-nvim-theme'                  " Color scheme
+  Plug 'airblade/vim-gitgutter'                       " Git visuals
 call plug#end()
 
 colorscheme github_*
@@ -50,7 +50,6 @@ let g:coc_global_extensions = [
   \'coc-svelte',
   \'coc-vetur']
   
-
 " Golang strict format
 let g:go_fmt_command="gopls"
 let g:go_gopls_gofumpt=1
@@ -132,3 +131,10 @@ filetype plugin indent on
 syntax on
 autocmd Filetype * AnyFoldActivate
 set foldlevel=99
+
+" Gitglutter
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = '<'
