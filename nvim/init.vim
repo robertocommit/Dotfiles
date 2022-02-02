@@ -84,6 +84,8 @@ set clipboard+=unnamedplus                  " Copy and paste, requires xclip, gv
 set conceallevel=1
 set scrolloff=3                             " Leave n rows top/down when scrollinh
 set colorcolumn=80                          " Vertical bar
+set sidescrolloff=999
+set scrolloff=999
 highlight ColorColumn ctermbg=238           " Change color verical bar
 
 " Mappings
