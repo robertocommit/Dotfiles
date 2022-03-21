@@ -29,16 +29,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'reedes/vim-pencil'                            " Writing utilities and tools
   Plug 'projekt0n/github-nvim-theme'                  " Color scheme
   Plug 'airblade/vim-gitgutter'                       " Git visuals
+  Plug 'danilamihailov/beacon.nvim'                   " See cursor when jumping
 call plug#end()
 
 colorscheme github_*
-
-" Automagically runs Pencil for md and txt files
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd call pencil#init()
-  autocmd FileType text         call pencil#init({'wrap': 'hard'})
-augroup END
 
 let g:coc_global_extensions = [
   \'coc-html',
@@ -47,7 +41,6 @@ let g:coc_global_extensions = [
   \'coc-go',
   \'coc-sql',
   \'coc-eslint',
-  \'coc-svelte',
   \'coc-vetur']
   
 " Golang strict format
@@ -86,6 +79,7 @@ set scrolloff=3                             " Leave n rows top/down when scrolli
 set colorcolumn=80                          " Vertical bar
 set sidescrolloff=999
 set scrolloff=999
+set spelllang=en
 highlight ColorColumn ctermbg=238           " Change color verical bar
 
 " Mappings
@@ -127,6 +121,8 @@ let g:floaterm_keymap_new = '<C-A-n>'
 let g:floaterm_keymap_kill = '<C-A-k>'
 let g:floaterm_keymap_show = '<C-A-s>'
 let g:floaterm_keymap_hide = '<C-A-h>'
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.85
 
 " Folding
 filetype plugin indent on
@@ -140,3 +136,15 @@ let g:gitgutter_sign_modified = '>'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = '<'
+
+" Beacon
+let g:beacon_enable = 1
+let g:beacon_size = 40
+highlight Beacon guibg=white ctermbg=15
+
+" Automagically runs Pencil for md and txt files
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init({'wrap': 'hard'})
+augroup END
