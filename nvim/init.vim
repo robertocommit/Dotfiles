@@ -30,6 +30,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'projekt0n/github-nvim-theme'                  " Color scheme
   Plug 'airblade/vim-gitgutter'                       " Git visuals
   Plug 'danilamihailov/beacon.nvim'                   " See cursor when jumping
+  Plug 'andweeb/presence.nvim'
 call plug#end()
 
 colorscheme github_*
@@ -41,6 +42,7 @@ let g:coc_global_extensions = [
   \'coc-go',
   \'coc-sql',
   \'coc-eslint',
+  \'coc-svelte',
   \'coc-vetur']
   
 " Golang strict format
