@@ -56,6 +56,8 @@ map('n', '<up>', '<C-w>k', opts)
 map('n', '<down>', '<C-w>j', opts)
 map('n', '<left>', '<C-w>h', opts)
 map('n', '<right>', '<C-w>l', opts)
+map('i', '<C-y>', '<C-u>', opts)
+map('i', '<C-x>', '<C-w>', opts)
 
 -- Keep cursor centered when searching
 map('n', 'n', 'nzzzv', opts)
