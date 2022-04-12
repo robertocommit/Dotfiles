@@ -110,6 +110,7 @@ vim.opt.scrolloff=999
 vim.opt.encoding="utf-8"
 vim.opt.fileencoding="utf-8"
 
+vim.o.clipbloard = "unnamedplus"
 
 local cmp = require'cmp'
 
