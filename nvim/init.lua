@@ -28,6 +28,7 @@ require('packer').startup(function()
   use 'projekt0n/github-nvim-theme'
   use 'airblade/vim-gitgutter'
   use 'danilamihailov/beacon.nvim'
+  use 'fatih/vim-go'
   use {
     'romgrk/barbar.nvim',
     requires = {'kyazdani42/nvim-web-devicons'}
