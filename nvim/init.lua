@@ -90,6 +90,7 @@ vim.g['gitgutter_sign_removed_first_line'] = '^'
 vim.g['gitgutter_sign_modified_removed'] = '<'
 
 vim.opt.number=true
+vim.opt.mouse="a"
 vim.opt.relativenumber=true
 vim.opt.showmode=true
 vim.opt.showcmd=true
@@ -109,8 +110,14 @@ vim.opt.sidescrolloff=999
 vim.opt.scrolloff=999
 vim.opt.encoding="utf-8"
 vim.opt.fileencoding="utf-8"
+vim.o.clipboard = "unnamedplus"
 
-vim.o.clipbloard = "unnamedplus"
+--[[ vim.api.nvim_set_keymap("n", "<c-c>", '"*y :let @+=@*<CR>', {noremap=true, silent=true})
+vim.api.nvim_set_keymap("n", "<c-v>", '"+p', {noremap=true, silent=true})
+vim.api.nvim_set_keymap("i", "<c-c>", '"*y :let @+=@*<CR>', {noremap=true, silent=true})
+vim.api.nvim_set_keymap("i", "<c-c>", '"*y :let @+=@*<CR>', {noremap=true, silent=true})
+vim.api.nvim_set_keymap("v", "<c-v>", '"+p', {noremap=true, silent=true})
+vim.api.nvim_set_keymap("v", "<c-v>", '"+p', {noremap=true, silent=true}) ]]
 
 local cmp = require'cmp'
 
