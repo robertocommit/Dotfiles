@@ -1,4 +1,14 @@
--- 
+-- Install Packer https://github.com/wbthomason/packer.
+-- Install packages with :PackerSync
+-- Install https://github.com/neovim/nvim-lspconfig
+-- Install https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+-- Enable completition https://github.com/hrsh7th/nvim-cmp
+
+local vim = vim
+local use = require('packer').use
+local opts = { noremap = true, silent = true }
+local map = vim.api.nvim_set_keymap
+
 require('packer').startup(function()
   use 'williamboman/nvim-lsp-installer'
   use 'neovim/nvim-lspconfig'
@@ -39,17 +49,17 @@ end)
 
 require('github-theme').setup()
 require'lspconfig'.pyright.setup{}
+require'lspconfig'.golangci_lint_ls.setup{}
+require'lspconfig'.tsserver.setup{}
 
+-- :LspInstall <language-server>
 local lsp_installer = require("nvim-lsp-installer")
 lsp_installer.on_server_ready(function(server)
-    local opts = {}
-    server:setup(opts)
+  local opts2 = {}
+  server:setup(opts2)
 end)
 
-
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-
+-- Keyboard mapping
 map('n', '<c-s>', ':w<CR>', opts)
 map('i', '<c-s>', '<Esc>:w<CR>', opts)
 map('v', '<c-s>', '<Esc>:w<CR>', opts)
@@ -59,25 +69,17 @@ map('n', '<left>', '<C-w>h', opts)
 map('n', '<right>', '<C-w>l', opts)
 map('i', '<C-y>', '<C-u>', opts)
 map('i', '<C-x>', '<C-w>', opts)
-
--- Keep cursor centered when searching
-map('n', 'n', 'nzzzv', opts)
-map('n', 'N', 'Nzzzv', opts)
-
--- Floaterm
-map('n', '<C-A-n>', ':FloatermNew<CR>', opts)
-map('t', '<C-A-h>', ':FloatermHide<CR>', opts)
-map('n', '<C-A-s>', ':FloatermShow<CR>', opts)
-map('n', '<C-A-p>', ':FloatermNext<CR>', opts)
-map('n', '<C-A-o>', ':FloatermPrev<CR>', opts)
-vim.g['floaterm_width'] = 0.9
-vim.g['floaterm_height'] = 0.85
+map('i', '<C-c>', '<C-o>de', opts)
 
 -- Tabbar
-map('n', '<A-,>', ':BufferPrevious<CR>', opts)
-map('n', '<A-.>', ':BufferNext<CR>', opts)
-map('n', '<A-<>', ':BufferMovePrevious<CR>', opts)
-map('n', '<A->>', ' :BufferMoveNext<CR>', opts)
+map('n', '<C-o>', ':BufferPrevious<CR>', opts)
+map('n', '<C-p>', ':BufferNext<CR>', opts)
+map('n', '<C-k>', ':BufferMovePrevious<CR>', opts)
+map('n', '<C-l>', ':BufferMoveNext<CR>', opts)
+map('n', '<C-q>', ':bd!<CR>', opts)
+
+-- Exit terminal mode
+map('t', '<ESC>', '<C-\\><C-n>', opts)
 
 -- FZF
 map('n', 'ff', ':Files<CR>', opts)
@@ -90,6 +92,11 @@ vim.g['gitgutter_sign_removed'] = '-'
 vim.g['gitgutter_sign_removed_first_line'] = '^'
 vim.g['gitgutter_sign_modified_removed'] = '<'
 
+-- Keep cursor centered when searching
+map('n', 'n', 'nzzzv', opts)
+map('n', 'N', 'Nzzzv', opts)
+
+-- Settings
 vim.opt.number=true
 vim.opt.mouse="a"
 vim.opt.relativenumber=true
@@ -113,36 +120,16 @@ vim.opt.encoding="utf-8"
 vim.opt.fileencoding="utf-8"
 vim.o.clipboard = "unnamedplus"
 
---[[ vim.api.nvim_set_keymap("n", "<c-c>", '"*y :let @+=@*<CR>', {noremap=true, silent=true})
-vim.api.nvim_set_keymap("n", "<c-v>", '"+p', {noremap=true, silent=true})
-vim.api.nvim_set_keymap("i", "<c-c>", '"*y :let @+=@*<CR>', {noremap=true, silent=true})
-vim.api.nvim_set_keymap("i", "<c-c>", '"*y :let @+=@*<CR>', {noremap=true, silent=true})
-vim.api.nvim_set_keymap("v", "<c-v>", '"+p', {noremap=true, silent=true})
-vim.api.nvim_set_keymap("v", "<c-v>", '"+p', {noremap=true, silent=true}) ]]
-
 local cmp = require'cmp'
 
   cmp.setup({
-    snippet = {
-      -- REQUIRED - you must specify a snippet engine
-      expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-      end,
-    },
-    mapping = {
-      ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-      ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-      ['<C-e>'] = cmp.mapping({
-        i = cmp.mapping.abort(),
-        c = cmp.mapping.close(),
-      }),
+    mapping = cmp.mapping.preset.insert({
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.abort(),
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    },
+    }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'vsnip' }, -- For vsnip users.
@@ -165,6 +152,7 @@ local cmp = require'cmp'
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = {
       { name = 'buffer' }
     }
@@ -172,19 +160,10 @@ local cmp = require'cmp'
 
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
       { name = 'path' }
     }, {
       { name = 'cmdline' }
     })
   })
-
-  --[[ -- Setup lspconfig.
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['gopls'].setup {
-    capabilities = capabilities
-  }
-  require('lspconfig')['pyright'].setup {
-    capabilities = capabilities
-  } ]]
