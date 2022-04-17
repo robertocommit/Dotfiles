@@ -17,34 +17,27 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
-  use 'junegunn/fzf.vim'
-  use 'wbthomason/packer.nvim'
-  use 'tpope/vim-fugitive'
-  use 'psliwka/vim-smoothie'
-  use 'b3nj5m1n/kommentary'
-  use 'pseewald/vim-anyfold'
-  use 'vim-airline/vim-airline'
-  use 'pacha/vem-tabline'
-  use 'ryanoasis/vim-devicons'
-  use 'miyakogi/conoline.vim'
-  use 'tpope/vim-surround'
-  use 'Yggdroot/indentLine'
-  use 'mhinz/vim-startify'
-  use 'ap/vim-css-color'
-  use 'voldikss/vim-floaterm'
-  use 'justinmk/vim-sneak'
-  use 'haya14busa/incsearch.vim'
-  use 'preservim/vim-pencil'
-  use 'projekt0n/github-nvim-theme'
-  use 'airblade/vim-gitgutter'
-  use 'danilamihailov/beacon.nvim'
-  use 'fatih/vim-go'
-  use {
+  use 'junegunn/fzf.vim' -- fuzzy search
+  use 'wbthomason/packer.nvim' -- package manager
+  use 'psliwka/vim-smoothie' -- smooth scroll
+  use 'b3nj5m1n/kommentary' -- comment code
+  use 'vim-airline/vim-airline' -- bottom info bar
+  use 'miyakogi/conoline.vim' -- highlight current line
+  use 'tpope/vim-surround' -- manage surrounded text
+  use 'Yggdroot/indentLine' -- show line indentation
+  use 'mhinz/vim-startify' -- nvim startscreen
+  use 'ap/vim-css-color' -- show css colors
+  use 'justinmk/vim-sneak' -- jump on the page
+  use 'preservim/vim-pencil' -- tools for writing
+  use 'projekt0n/github-nvim-theme' -- theme
+  use 'airblade/vim-gitgutter' -- show git icons on left
+  use 'danilamihailov/beacon.nvim' -- show cursor when moving
+  use 'fatih/vim-go' -- golang
+  use { -- tabbar
     'romgrk/barbar.nvim',
     requires = {'kyazdani42/nvim-web-devicons'}
   }
-  use 'ms-jpq/coq_nvim'
-  use 'evanleck/vim-svelte'
+  use 'evanleck/vim-svelte' -- svelte plugin
 end)
 
 require('github-theme').setup()
