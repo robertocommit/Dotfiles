@@ -24,5 +24,8 @@ alias ls="exa -1 -l --icons"
 alias gs="git status"
 alias ga.="git add ."
 alias gd="git diff"
+alias gpom="git pull origin main"
+alias gcm="git checkout main"
+alias gcs="git checkout staging"
 
 eval "$(starship init zsh)"
