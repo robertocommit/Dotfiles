@@ -17,7 +17,13 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
-  use 'junegunn/fzf.vim' -- fuzzy search
+  use { -- fuzzy search
+    "junegunn/fzf",
+    run = function()
+      vim.fn["fzf#install"]()
+    end
+  }
+  use "junegunn/fzf.vim"
   use 'wbthomason/packer.nvim' -- package manager
   use 'psliwka/vim-smoothie' -- smooth scroll
   use 'b3nj5m1n/kommentary' -- comment code
