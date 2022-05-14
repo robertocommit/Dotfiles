@@ -29,3 +29,6 @@ alias gcm="git checkout main"
 alias gcs="git checkout staging"
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
