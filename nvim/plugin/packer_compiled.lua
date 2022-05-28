@@ -104,10 +104,10 @@ _G.packer_plugins = {
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/conoline.vim",
     url = "https://github.com/miyakogi/conoline.vim"
   },
-  coq_nvim = {
+  fzf = {
     loaded = true,
-    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/coq_nvim",
-    url = "https://github.com/ms-jpq/coq_nvim"
+    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/fzf",
+    url = "https://github.com/junegunn/fzf"
   },
   ["fzf.vim"] = {
     loaded = true,
@@ -119,11 +119,6 @@ _G.packer_plugins = {
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
     url = "https://github.com/projekt0n/github-nvim-theme"
   },
-  ["incsearch.vim"] = {
-    loaded = true,
-    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/incsearch.vim",
-    url = "https://github.com/haya14busa/incsearch.vim"
-  },
   indentLine = {
     loaded = true,
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/indentLine",
@@ -133,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/kommentary",
     url = "https://github.com/b3nj5m1n/kommentary"
+  },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -159,46 +159,15 @@ _G.packer_plugins = {
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  ["pretty-fold.nvim"] = {
-    config = { "\27LJ\2\nv\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0029\0\4\0B\0\1\1K\0\1\0\21setup_keybinding\24pretty-fold.preview\nsetup\16pretty-fold\frequire\0" },
-    loaded = true,
-    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/pretty-fold.nvim",
-    url = "https://github.com/anuvyklack/pretty-fold.nvim"
-  },
-  ["vem-tabline"] = {
-    loaded = true,
-    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/vem-tabline",
-    url = "https://github.com/pacha/vem-tabline"
-  },
   ["vim-airline"] = {
     loaded = true,
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
   },
-  ["vim-anyfold"] = {
-    loaded = true,
-    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/vim-anyfold",
-    url = "https://github.com/pseewald/vim-anyfold"
-  },
   ["vim-css-color"] = {
     loaded = true,
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/vim-css-color",
     url = "https://github.com/ap/vim-css-color"
-  },
-  ["vim-devicons"] = {
-    loaded = true,
-    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/vim-devicons",
-    url = "https://github.com/ryanoasis/vim-devicons"
-  },
-  ["vim-floaterm"] = {
-    loaded = true,
-    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/vim-floaterm",
-    url = "https://github.com/voldikss/vim-floaterm"
-  },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-gitgutter"] = {
     loaded = true,
@@ -243,10 +212,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: pretty-fold.nvim
-time([[Config for pretty-fold.nvim]], true)
-try_loadstring("\27LJ\2\nv\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0029\0\4\0B\0\1\1K\0\1\0\21setup_keybinding\24pretty-fold.preview\nsetup\16pretty-fold\frequire\0", "config", "pretty-fold.nvim")
-time([[Config for pretty-fold.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

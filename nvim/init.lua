@@ -44,6 +44,7 @@ require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons'}
   }
   use 'evanleck/vim-svelte' -- svelte plugin
+  use "iamcco/markdown-preview.nvim" -- show markdown in browser
 end)
 
 require('github-theme').setup()
