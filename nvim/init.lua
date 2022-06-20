@@ -45,9 +45,13 @@ require('packer').startup(function()
   }
   use 'evanleck/vim-svelte' -- svelte plugin
   use "iamcco/markdown-preview.nvim" -- show markdown in browser
+  use 'mzlogin/vim-markdown-toc' -- generate table of content
+  use 'petertriho/nvim-scrollbar' -- scrollbar
+  use 'mattn/emmet-vim' -- html utilities
 end)
 
 require('github-theme').setup()
+require("scrollbar").setup()
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.golangci_lint_ls.setup{}
 require'lspconfig'.tsserver.setup{}
