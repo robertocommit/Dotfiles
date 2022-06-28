@@ -35,8 +35,8 @@ require('packer').startup(function()
   use 'ap/vim-css-color' -- show css colors
   use 'justinmk/vim-sneak' -- jump on the page
   use 'preservim/vim-pencil' -- tools for writing
-  use 'projekt0n/github-nvim-theme' -- theme
-  use 'airblade/vim-gitgutter' -- show git icons on left
+  use "rebelot/kanagawa.nvim" -- theme
+  use 'mhinz/vim-signify' -- highlight changed rows
   use 'danilamihailov/beacon.nvim' -- show cursor when moving
   use 'fatih/vim-go' -- golang
   use { -- tabbar
@@ -48,9 +48,11 @@ require('packer').startup(function()
   use 'mzlogin/vim-markdown-toc' -- generate table of content
   use 'petertriho/nvim-scrollbar' -- scrollbar
   use 'mattn/emmet-vim' -- html utilities
+  use 'RRethy/vim-illuminate' -- highlight identical words
 end)
 
-require('github-theme').setup()
+vim.cmd("colorscheme kanagawa")
+
 require("scrollbar").setup()
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.golangci_lint_ls.setup{}
@@ -88,13 +90,6 @@ map('t', '<ESC>', '<C-\\><C-n>', opts)
 -- FZF
 map('n', 'ff', ':Files<CR>', opts)
 map('n', 'fg', ':Rg<CR>', opts)
-
--- Gitglutter
-vim.g['gitgutter_sign_added'] = '+'
-vim.g['gitgutter_sign_modified'] = '>'
-vim.g['gitgutter_sign_removed'] = '-'
-vim.g['gitgutter_sign_removed_first_line'] = '^'
-vim.g['gitgutter_sign_modified_removed'] = '<'
 
 -- Keep cursor centered when searching
 map('n', 'n', 'nzzzv', opts)
