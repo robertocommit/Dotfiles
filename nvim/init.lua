@@ -35,7 +35,7 @@ require('packer').startup(function()
   use 'ap/vim-css-color' -- show css colors
   use 'justinmk/vim-sneak' -- jump on the page
   use 'preservim/vim-pencil' -- tools for writing
-  use "rebelot/kanagawa.nvim" -- theme
+  use 'projekt0n/github-nvim-theme' -- theme
   use 'mhinz/vim-signify' -- highlight changed rows
   use 'danilamihailov/beacon.nvim' -- show cursor when moving
   use 'fatih/vim-go' -- golang
@@ -51,7 +51,7 @@ require('packer').startup(function()
   use 'RRethy/vim-illuminate' -- highlight identical words
 end)
 
-vim.cmd("colorscheme kanagawa")
+require('github-theme').setup()
 
 require("scrollbar").setup()
 require'lspconfig'.pyright.setup{}
