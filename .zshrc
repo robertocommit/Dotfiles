@@ -8,6 +8,8 @@ export PATH=$PATH:$GOROOT/bin
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
+export MCFLY_RESULTS=1000
+
 plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -27,6 +29,8 @@ alias gd="git diff"
 alias gpom="git pull origin main"
 alias gcm="git checkout main"
 alias gcs="git checkout staging"
+alias lg="lazygit"
+alias ld="lazydocker"
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
