@@ -159,6 +159,11 @@ _G.packer_plugins = {
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
     url = "https://github.com/petertriho/nvim-scrollbar"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -179,10 +184,20 @@ _G.packer_plugins = {
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/vim-css-color",
     url = "https://github.com/ap/vim-css-color"
   },
+  ["vim-dotoo"] = {
+    loaded = true,
+    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/vim-dotoo",
+    url = "https://github.com/dhruvasagar/vim-dotoo"
+  },
   ["vim-go"] = {
     loaded = true,
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/vim-go",
     url = "https://github.com/fatih/vim-go"
+  },
+  ["vim-illuminate"] = {
+    loaded = true,
+    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
   },
   ["vim-markdown-toc"] = {
     loaded = true,

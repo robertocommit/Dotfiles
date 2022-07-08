@@ -4,12 +4,11 @@
 -- Install https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 -- Enable completition https://github.com/hrsh7th/nvim-cmp
 
-require("config_mappings")
-require("config_settings")
 require("config_packer")
-require("config_orgmode")
 require("config_completion")
 require("config_lspinstaller")
+require("config_settings")
+require("config_mappings")
 require("github-theme").setup()
 require("scrollbar").setup()
 require("lspconfig").pyright.setup{}
