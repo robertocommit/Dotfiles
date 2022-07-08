@@ -24,5 +24,3 @@ vim.opt.encoding="utf-8"
 vim.opt.fileencoding="utf-8"
 vim.o.clipboard = "unnamedplus"
 vim.wo.colorcolumn="80"
-vim.g["dotoo#agenda#files"] = {"~/Code/Notes/*.dotoo"}
-vim.g["dotoo#capture#refile"] = "/home/dolphin/Code/Notes/notes.dotoo"

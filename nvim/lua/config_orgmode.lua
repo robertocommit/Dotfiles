@@ -7,8 +7,8 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {'org'},
 }
 require('orgmode').setup({
-  org_agenda_files = {'~/Code/**/*.org'},
-  org_default_notes_file = '~/Code/Org/notes.org',
+  org_agenda_files = {'~/Code/Orgs/*.org'},
+  org_default_notes_file = '~/Code/Orgs/notes.org',
   mappings = {
     prefix = '#',
     global = {
