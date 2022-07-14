@@ -10,9 +10,9 @@ require("config_lspinstaller")
 require("config_orgmode")
 require("config_settings")
 require("config_mappings")
+require("config_self")
 require("github-theme").setup()
 require("scrollbar").setup()
 require("lspconfig").pyright.setup{}
 require("lspconfig").golangci_lint_ls.setup{}
 require("lspconfig").tsserver.setup{}
-
