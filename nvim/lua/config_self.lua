@@ -2,7 +2,7 @@ local vim = vim
 
 function SistemaAccenti()
   local from = {"E'", "a'", "e'", "i'", "o'", "u'"}
-  local to = {"é", "á", "é", "í", "ó", "ú"}
+  local to = {"É", "á", "é", "í", "ó", "ú"}
 
   local last_line = vim.api.nvim_buf_line_count(0)
   local lines = vim.api.nvim_buf_get_lines(0, 0, last_line, true)
