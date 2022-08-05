@@ -46,4 +46,6 @@ require('packer').startup(function()
     require('orgmode').setup{}
     end
   }
+  use 'majutsushi/tagbar'
+  use 'lvht/tagbar-markdown'
 end)

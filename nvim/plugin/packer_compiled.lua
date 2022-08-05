@@ -180,6 +180,16 @@ _G.packer_plugins = {
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  tagbar = {
+    loaded = true,
+    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/tagbar",
+    url = "https://github.com/majutsushi/tagbar"
+  },
+  ["tagbar-markdown"] = {
+    loaded = true,
+    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/tagbar-markdown",
+    url = "https://github.com/lvht/tagbar-markdown"
+  },
   ["vim-airline"] = {
     loaded = true,
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/vim-airline",
