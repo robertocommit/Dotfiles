@@ -109,11 +109,6 @@ _G.packer_plugins = {
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
-  fzf = {
-    loaded = true,
-    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/fzf",
-    url = "https://github.com/junegunn/fzf"
-  },
   ["fzf.vim"] = {
     loaded = true,
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/fzf.vim",
@@ -180,6 +175,11 @@ _G.packer_plugins = {
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
   tagbar = {
     loaded = true,
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/tagbar",
@@ -189,6 +189,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/tagbar-markdown",
     url = "https://github.com/lvht/tagbar-markdown"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["vim-airline"] = {
     loaded = true,

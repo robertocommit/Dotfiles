@@ -9,11 +9,10 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
-  use { -- fuzzy search
-    "junegunn/fzf",
-    run = function()
-      vim.fn["fzf#install"]()
-    end
+
+  use { -- telescope
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
   use "junegunn/fzf.vim"
   use 'wbthomason/packer.nvim' -- package manager
