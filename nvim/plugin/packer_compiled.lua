@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["coc.nvim"] = {
+    loaded = true,
+    path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/coc.nvim",
+    url = "https://github.com/neoclide/coc.nvim"
+  },
   ["conoline.vim"] = {
     loaded = true,
     path = "/home/dolphin/.local/share/nvim/site/pack/packer/start/conoline.vim",

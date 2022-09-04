@@ -32,6 +32,8 @@ alias gcs="git checkout staging"
 alias lg="lazygit"
 alias ld="lazydocker"
 
+alias img="kitty +kitten icat"
+
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(mcfly init zsh)"

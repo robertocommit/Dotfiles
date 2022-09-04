@@ -18,3 +18,7 @@ function SistemaAccenti()
     end
   end
 end
+
+function ParseJson()
+  vim.cmd(":%!jq")
+end

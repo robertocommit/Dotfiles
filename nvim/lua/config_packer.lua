@@ -47,4 +47,5 @@ require('packer').startup(function()
   }
   use 'majutsushi/tagbar'
   use 'lvht/tagbar-markdown'
+  use 'neoclide/coc.nvim'
 end)
