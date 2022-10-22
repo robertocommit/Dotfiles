@@ -41,10 +41,6 @@ require('packer').startup(function()
   use 'mattn/emmet-vim' -- html utilities
   use 'RRethy/vim-illuminate' -- highlight identical words
   use {'nvim-treesitter/nvim-treesitter'} -- parse code to extract its structure
-  use {'nvim-orgmode/orgmode', config = function() -- orgmode
-    require('orgmode').setup{}
-    end
-  }
   use 'majutsushi/tagbar'
   use 'lvht/tagbar-markdown'
   use 'neoclide/coc.nvim'

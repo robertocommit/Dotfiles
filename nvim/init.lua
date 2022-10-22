@@ -7,7 +7,6 @@
 require("config_packer")
 require("config_completion")
 require("config_lspinstaller")
-require("config_orgmode")
 require("config_settings")
 require("config_mappings")
 require("config_self")
