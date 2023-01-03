@@ -31,3 +31,7 @@ map('n', 'fg', ':Rg<CR>', opts)
 -- Keep cursor centered when searching
 map('n', 'n', 'nzzzv', opts)
 map('n', 'N', 'Nzzzv', opts)
+
+-- Copilot
+map('i', '<C-0>', '<Plug>(copilot-next)', { noremap = false })
+map('i', '<C-9>', '<Plug>(copilot-previous)', { noremap = false })

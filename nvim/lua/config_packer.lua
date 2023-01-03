@@ -43,5 +43,5 @@ require('packer').startup(function()
   use {'nvim-treesitter/nvim-treesitter'} -- parse code to extract its structure
   use 'majutsushi/tagbar'
   use 'lvht/tagbar-markdown'
-  use 'neoclide/coc.nvim'
+  use {'neoclide/coc.nvim', branch = 'release'}
 end)
