@@ -31,6 +31,7 @@ alias gcm="git checkout main"
 alias gcs="git checkout staging"
 alias lg="lazygit"
 alias ld="lazydocker"
+alias s="kitty +kitten ssh"
 
 alias img="kitty +kitten icat"
 

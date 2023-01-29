@@ -41,7 +41,8 @@ require('packer').startup(function()
   use 'mattn/emmet-vim' -- html utilities
   use 'RRethy/vim-illuminate' -- highlight identical words
   use {'nvim-treesitter/nvim-treesitter'} -- parse code to extract its structure
-  use 'majutsushi/tagbar'
-  use 'lvht/tagbar-markdown'
-  use {'neoclide/coc.nvim', branch = 'release'}
+  use 'wellle/context.vim' -- show context
+  use 'majutsushi/tagbar' -- show tags
+  use 'lvht/tagbar-markdown' -- show tags in markdown
+  use {'neoclide/coc.nvim', branch = 'release'} -- autocomplete
 end)
