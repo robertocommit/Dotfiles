@@ -18,7 +18,10 @@ require('packer').startup(function()
   use 'wbthomason/packer.nvim' -- package manager
   use 'psliwka/vim-smoothie' -- smooth scroll
   use 'b3nj5m1n/kommentary' -- comment code
-  use 'vim-airline/vim-airline' -- bottom info bar
+  use {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig"
+  } -- bottom info bar
   use 'miyakogi/conoline.vim' -- highlight current line
   use 'tpope/vim-surround' -- manage surrounded text
   use 'Yggdroot/indentLine' -- show line indentation
@@ -45,4 +48,5 @@ require('packer').startup(function()
   use 'majutsushi/tagbar' -- show tags
   use 'lvht/tagbar-markdown' -- show tags in markdown
   use {'neoclide/coc.nvim', branch = 'release'} -- autocomplete
+  use 'jghauser/mkdir.nvim' -- create directory
 end)
