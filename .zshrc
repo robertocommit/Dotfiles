@@ -1,14 +1,10 @@
-export ZSH="/home/dolphin/.oh-my-zsh"
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-export GOPATH="/home/dolphin/go"
-export GOBIN=""
-export GOROOT="/usr/lib/go"
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
+export ZSH="$HOME/.oh-my-zsh"
 
-export PATH="$HOME/.cargo/bin:$PATH"
-
-export MCFLY_RESULTS=1000
+export PATH=$PATH:$HOME/go/bin
 
 plugins=(
   zsh-autosuggestions
@@ -19,7 +15,11 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,underline"
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias c="clear"
 alias ls="exa -1 -l --icons"
@@ -37,7 +37,12 @@ alias img="kitty +kitten icat"
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+eval "$(mcfly init zsh)"
+alias python=/usr/bin/python3
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/roberto/Desktop/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/roberto/Desktop/google-cloud-sdk/path.zsh.inc'; fi
 
-bindkey -v
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/roberto/Desktop/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/roberto/Desktop/google-cloud-sdk/completion.zsh.inc'; fi
