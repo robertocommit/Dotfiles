@@ -33,3 +33,7 @@ vim.o.foldenable = true
 
 vim.keymap.set('n', 'zO', require('ufo').openAllFolds)
 vim.keymap.set('n', 'zC', require('ufo').closeAllFolds)
+
+vim.cmd[[colorscheme solarized-osaka]]
+
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
