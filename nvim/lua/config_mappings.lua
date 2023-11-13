@@ -14,7 +14,6 @@ map('i', '<C-y>', '<C-u>', opts)
 map('i', '<C-x>', '<C-w>', opts)
 map('i', '<C-c>', '<C-o>de', opts)
 
-
 -- Tabbar
 map('n', '<C-o>', ':BufferPrevious<CR>', opts)
 map('n', '<C-p>', ':BufferNext<CR>', opts)
