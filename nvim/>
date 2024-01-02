@@ -4,8 +4,6 @@ local use = require('packer').use
 require('packer').startup(function()
 
   use 'wbthomason/packer.nvim' -- package manager
-  
-  use 'nvim-treesitter/nvim-treesitter'
 
   use 'craftzdog/solarized-osaka.nvim' -- theme
 
@@ -21,18 +19,13 @@ require('packer').startup(function()
   use 'Yggdroot/indentLine' -- show line indentation
   use 'mhinz/vim-startify' -- nvim startscreen
   use 'ap/vim-css-color' -- show css colors
+  use 'justinmk/vim-sneak' -- jump on the page
   use 'mhinz/vim-signify' -- highlight changed rows
   use 'petertriho/nvim-scrollbar' -- scrollbar
   use 'RRethy/vim-illuminate' -- highlight identical words
   use 'wellle/context.vim' -- show context
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'} -- folding code
-
-  use {
-    'folke/flash.nvim',
-    config = function()
-      require("flash").setup({})
-    end
-  } -- jump on the page
+  -- use 'b0o/incline.nvim' -- floating bar
 
   use 'evanleck/vim-svelte' -- svelte plugin
   use 'fatih/vim-go' -- golang

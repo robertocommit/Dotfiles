@@ -22,7 +22,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,underline"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias c="clear"
-alias ls="exa -1 -l --icons"
 alias gs="git status"
 alias ga.="git add ."
 alias gd="git diff"
@@ -31,6 +30,7 @@ alias gcm="git checkout main"
 alias gcs="git checkout staging"
 alias lg="lazygit"
 alias ld="lazydocker"
+alias ls='lsd -la'
 alias s="kitty +kitten ssh"
 
 alias img="kitty +kitten icat"
