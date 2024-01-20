@@ -27,12 +27,7 @@ require('packer').startup(function()
   use 'wellle/context.vim' -- show context
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'} -- folding code
 
-  use {
-    'folke/flash.nvim',
-    config = function()
-      require("flash").setup({})
-    end
-  } -- jump on the page
+  use 'justinmk/vim-sneak' -- jump on the page
 
   use 'evanleck/vim-svelte' -- svelte plugin
   use 'fatih/vim-go' -- golang

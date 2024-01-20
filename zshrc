@@ -31,7 +31,7 @@ alias gcs="git checkout staging"
 alias lg="lazygit"
 alias ld="lazydocker"
 alias ls='lsd -la'
-alias s="kitty +kitten ssh"
+alias ssh="kitty +kitten ssh"
 
 alias img="kitty +kitten icat"
 
