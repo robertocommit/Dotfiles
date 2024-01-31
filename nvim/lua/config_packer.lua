@@ -4,12 +4,17 @@ local use = require('packer').use
 require('packer').startup(function()
 
   use 'wbthomason/packer.nvim' -- package manager
+
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
   
   use 'nvim-treesitter/nvim-treesitter'
 
   use 'craftzdog/solarized-osaka.nvim' -- theme
 
-  use 'williamboman/mason.nvim' -- external editor tooling 
 
   use {'neoclide/coc.nvim', branch = 'release'} -- autocomplete
 
