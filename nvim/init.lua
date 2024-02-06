@@ -3,6 +3,7 @@ require("config_settings")
 require("config_mappings")
 require("config_self")
 require("config_lsp")
+
 require("mason").setup()
 require("scrollbar").setup()
 require('ufo').setup()
