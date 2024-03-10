@@ -18,6 +18,7 @@ require('packer').startup(function()
   use {'neoclide/coc.nvim', branch = 'release'} -- autocomplete
 
   use { 'junegunn/fzf', run = ":call fzf#install()" } -- searching files
+  use 'junegunn/fzf.vim'
 
   use 'psliwka/vim-smoothie' -- smooth scroll
   use 'miyakogi/conoline.vim' -- highlight current line
