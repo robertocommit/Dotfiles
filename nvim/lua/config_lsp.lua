@@ -6,18 +6,19 @@ require("mason-lspconfig").setup({
 
 local lspconfig = require("lspconfig")
 lspconfig.tsserver.setup({})
-lspconfig.svelte.setup{
-  cmd = { "yarn", "svelteserver", "--stdio" };
-  on_attach = on_attach;
-  settings = {
-    svelte = {
-      plugin = {
-        svelte = {
-          compilerWarnings = {
-            ["a11y-no-onchange"] = "ignore"
-          }
-        }
-      }
-    }
-  }
-}
+lspconfig.svelte.setup({})
+-- lspconfig.svelte.setup{
+--   cmd = { "yarn", "svelteserver", "--stdio" };
+--   on_attach = on_attach;
+--   settings = {
+--     svelte = {
+--       plugin = {
+--         svelte = {
+--           compilerWarnings = {
+--             ["a11y-no-onchange"] = "ignore"
+--           }
+--         }
+--       }
+--     }
+--   }
+-- }

@@ -9,17 +9,15 @@ require('packer').startup(function()
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
-  }
+  } -- lsp
   
-  use 'nvim-treesitter/nvim-treesitter'
+  use 'nvim-treesitter/nvim-treesitter' -- syntax highlight
 
   use 'craftzdog/solarized-osaka.nvim' -- theme
 
-
   use {'neoclide/coc.nvim', branch = 'release'} -- autocomplete
 
-  use { 'junegunn/fzf', run = ":call fzf#install()" }
-  use 'junegunn/fzf.vim'
+  use { 'junegunn/fzf', run = ":call fzf#install()" } -- searching files
 
   use 'psliwka/vim-smoothie' -- smooth scroll
   use 'miyakogi/conoline.vim' -- highlight current line
@@ -27,8 +25,6 @@ require('packer').startup(function()
   use 'mhinz/vim-startify' -- nvim startscreen
   use 'ap/vim-css-color' -- show css colors
   use 'mhinz/vim-signify' -- highlight changed rows
-  use 'petertriho/nvim-scrollbar' -- scrollbar
-  use 'RRethy/vim-illuminate' -- highlight identical words
   use 'wellle/context.vim' -- show context
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'} -- folding code
 
