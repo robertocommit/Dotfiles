@@ -58,4 +58,6 @@ require('packer').startup(function()
     end,
   }) -- create files and folders
 
+  use 'mbbill/undotree' -- undo tree
+
 end)

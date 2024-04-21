@@ -35,3 +35,6 @@ map('n', 'N', 'Nzzzv', opts)
 -- Copilot
 map('i', '<C-0>', '<Plug>(copilot-next)', { noremap = false })
 map('i', '<C-9>', '<Plug>(copilot-previous)', { noremap = false })
+
+-- Undo tree
+map('n', 'yy', ':UndotreeToggle<CR>', opts)

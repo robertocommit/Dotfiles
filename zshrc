@@ -32,6 +32,7 @@ alias lg="lazygit"
 alias ld="lazydocker"
 alias ls='lsd -la'
 alias ssh="kitty +kitten ssh"
+alias lama='ollama run llama3 '
 
 alias img="kitty +kitten icat"
 
@@ -46,3 +47,19 @@ if [ -f '/Users/roberto/Desktop/google-cloud-sdk/path.zsh.inc' ]; then . '/Users
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/roberto/Desktop/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/roberto/Desktop/google-cloud-sdk/completion.zsh.inc'; fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
