@@ -22,6 +22,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,underline"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias c="clear"
+alias x="exit"
 alias gs="git status"
 alias ga.="git add ."
 alias gd="git diff"
