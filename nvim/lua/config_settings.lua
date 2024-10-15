@@ -1,6 +1,9 @@
 local vim = vim
 
 -- Settings
+
+vim.g.mapleader = " "
+
 vim.opt.number=true
 vim.opt.mouse="a"
 vim.opt.relativenumber=true
@@ -36,3 +39,10 @@ vim.keymap.set('n', 'zC', require('ufo').closeAllFolds)
 vim.cmd[[colorscheme solarized-osaka]]
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+
+local dbt = require("dbtpal")
+vim.keymap.set("n", "]r", dbt.run)
+vim.keymap.set("n", "]a", dbt.run_all)
+vim.keymap.set("n", "]t", dbt.test)
+vim.keymap.set("n", "]m", require("dbtpal.telescope").dbt_picker)

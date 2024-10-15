@@ -3,6 +3,8 @@ local use = require('packer').use
 
 require('packer').startup(function()
 
+  use "nvim-lua/plenary.nvim"
+
   use 'wbthomason/packer.nvim' -- package manager
 
   use {
@@ -59,5 +61,26 @@ require('packer').startup(function()
   }) -- create files and folders
 
   use 'mbbill/undotree' -- undo tree
+
+  use ({
+    "PedramNavid/dbtpal",
+    requires = {
+      { 
+        "nvim-lua/plenary.nvim" 
+      }, { 
+        "nvim-telescope/telescope.nvim" 
+      } 
+    },
+    config = function()
+      require("dbtpal").setup({
+        path_to_dbt = "/opt/homebrew/bin/dbt",
+        path_to_dbt_project = "/Users/roberto/Code/Partners/Etiql/dbt",
+        path_to_dbt_profiles_dir = "/Users/roberto/.dbt",
+        extended_path_search = true,
+        protect_compiled_files = true
+      })
+      require("telescope").load_extension("dbtpal")
+    end
+  })
 
 end)
