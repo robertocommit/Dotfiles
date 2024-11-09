@@ -37,7 +37,7 @@ require('packer').startup(function()
   use 'fatih/vim-go' -- golang
 
   use { -- telescope
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
@@ -82,5 +82,48 @@ require('packer').startup(function()
       require("telescope").load_extension("dbtpal")
     end
   })
+
+
+
+use {
+  'yetone/avante.nvim',
+  requires = {
+    'nvim-treesitter/nvim-treesitter',
+    'stevearc/dressing.nvim',
+    'nvim-lua/plenary.nvim',
+    'MunifTanjim/nui.nvim',
+    'nvim-tree/nvim-web-devicons',
+    'zbirenbaum/copilot.lua',
+    {
+      'HakonHarnes/img-clip.nvim',
+      config = function()
+        require('img-clip').setup({
+          -- your config
+        })
+      end
+    },
+    {
+      'MeanderingProgrammer/render-markdown.nvim',
+      config = function()
+        require('render-markdown').setup({
+          file_types = { "markdown", "Avante" }
+        })
+      end
+    }
+  },
+  config = function()
+    require('copilot').setup({
+      -- your config
+    })
+    require('avante_lib').load()
+    require('avante').setup({
+      -- your config
+    })
+  end
+}
+
+
+
+
 
 end)
