@@ -20,7 +20,7 @@ require('packer').startup(function()
   use {'neoclide/coc.nvim', branch = 'release'} -- autocomplete
 
   use { 'junegunn/fzf', run = ":call fzf#install()" } -- searching files
-  use 'junegunn/fzf.vim'
+  use 'junegunn/fzf.vim' -- searching files
 
   use 'psliwka/vim-smoothie' -- smooth scroll
   use 'miyakogi/conoline.vim' -- highlight current line
@@ -46,12 +46,12 @@ require('packer').startup(function()
     config = function()
       require('Comment').setup()
     end
-  }
+  } -- comment code
 
   use {
     'romgrk/barbar.nvim',
     requires = {'kyazdani42/nvim-web-devicons'}
-  } -- tab bar
+  } -- tab bar  
 
   use({
     "stevearc/oil.nvim",
@@ -62,7 +62,7 @@ require('packer').startup(function()
 
   use 'mbbill/undotree' -- undo tree
 
-  use ({
+  use ({ -- dbt plugin
     "PedramNavid/dbtpal",
     requires = {
       { 
@@ -82,42 +82,5 @@ require('packer').startup(function()
       require("telescope").load_extension("dbtpal")
     end
   })
-
-  use {
-    'yetone/avante.nvim',
-    requires = {
-      'nvim-treesitter/nvim-treesitter',
-      'stevearc/dressing.nvim',
-      'nvim-lua/plenary.nvim',
-      'MunifTanjim/nui.nvim',
-      'nvim-tree/nvim-web-devicons',
-      'zbirenbaum/copilot.lua',
-      {
-        'HakonHarnes/img-clip.nvim',
-        config = function()
-          require('img-clip').setup({
-            -- your config
-          })
-        end
-      },
-      {
-        'MeanderingProgrammer/render-markdown.nvim',
-        config = function()
-          require('render-markdown').setup({
-            file_types = { "markdown", "Avante" }
-          })
-        end
-      }
-    },
-    config = function()
-      require('copilot').setup({
-        -- your config
-      })
-      require('avante_lib').load()
-      require('avante').setup({
-        -- your config
-      })
-    end
-  }
 
 end)

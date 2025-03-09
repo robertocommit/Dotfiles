@@ -40,9 +40,8 @@ vim.cmd[[colorscheme solarized-osaka]]
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
-
 local dbt = require("dbtpal")
-vim.keymap.set("n", "]r", dbt.run)
-vim.keymap.set("n", "]a", dbt.run_all)
-vim.keymap.set("n", "]t", dbt.test)
-vim.keymap.set("n", "]m", require("dbtpal.telescope").dbt_picker)
+vim.keymap.set("n", "<M-r>", dbt.run)          -- Option + r
+vim.keymap.set("n", "<M-a>", dbt.run_all)      -- Option + a
+vim.keymap.set("n", "<M-t>", dbt.test)         -- Option + t
+vim.keymap.set("n", "<M-m>", require("dbtpal.telescope").dbt_picker)  -- Option + m

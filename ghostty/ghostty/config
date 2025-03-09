@@ -1,0 +1,25 @@
+theme = Blue Matrix
+font-size = 17
+background-opacity = 0.98
+cursor-style = block
+cursor-style-blink = true
+shell-integration = zsh
+macos-titlebar-style = tabs
+macos-option-as-alt = true
+copy-on-select = true
+unfocused-split-opacity = 0.95
+
+keybind = shift+ctrl+h=new_split:left
+keybind = shift+ctrl+j=new_split:down
+keybind = shift+ctrl+k=new_split:up
+keybind = shift+ctrl+l=new_split:right
+
+keybind = shift+ctrl+u=goto_split:left
+keybind = shift+ctrl+i=goto_split:bottom
+keybind = shift+ctrl+o=goto_split:top
+keybind = shift+ctrl+p=goto_split:right
+
+keybind = shift+ctrl+left=resize_split:left,10
+keybind = shift+ctrl+down=resize_split:down,10
+keybind = shift+ctrl+up=resize_split:up,10
+keybind = shift+ctrl+right=resize_split:right,10
